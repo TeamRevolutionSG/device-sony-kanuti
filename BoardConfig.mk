@@ -12,10 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Kernel Headers
 PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/kanuti/kernel-headers
 
+# Platform
 TARGET_BOARD_PLATFORM := msm8916
 
+# Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -35,6 +38,7 @@ TARGET_NO_KERNEL := false
 
 TARGET_USES_64_BIT_BINDER := true
 
+# Board
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -61,6 +65,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 4399808512
 BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
+# FSTAB
 TARGET_RECOVERY_FSTAB = device/sony/kanuti/rootdir/fstab.kanuti
 
 # GFX
@@ -75,9 +80,19 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
+# Qualcomm support
+BOARD_USES_QCOM_HARDWARE := true
+
+# QCRIL
+TARGET_RIL_VARIANT := caf
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+# AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -99,7 +114,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # BT definitions for Qualcomm solution
 BLUETOOTH_HCI_USE_MCT := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/kanuti/bluetooth
-BBOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # GPS definitions for Qualcomm solution
