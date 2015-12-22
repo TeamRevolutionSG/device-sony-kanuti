@@ -14,7 +14,14 @@
 
 PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/kanuti/kernel-headers
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := E2303,E2306,E2353,tulip 
+
 TARGET_BOARD_PLATFORM := msm8916
+
+# Kernel properties (use sonyxperiadev/kernel repo)
+TARGET_KERNEL_SOURCE := kernel/sony/msm
+TARGET_KERNEL_CONFIG := aosp_kanuti_tulip_defconfig 
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
